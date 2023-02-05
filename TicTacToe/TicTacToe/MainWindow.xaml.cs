@@ -90,16 +90,6 @@ namespace TicTacToe
             Button2_1.IsEnabled = true;
             Button2_2.IsEnabled = true;
 
-            Button0_0.Background = Brushes.White;
-            Button0_1.Background= Brushes.White;
-            Button0_2.Background= Brushes.White;
-            Button1_0.Background= Brushes.White;
-            Button1_1.Background = Brushes.White;
-            Button1_2.Background = Brushes.White;
-            Button2_0.Background = Brushes.White;
-            Button2_1.Background = Brushes.White;
-            Button2_2.Background = Brushes.White;
-
 
             Button0_0.Content = "";
             Button0_1.Content = "";
