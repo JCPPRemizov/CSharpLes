@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "cEY3lKRh2WvPt6a5YVlqTqNQ9Kkp+IlwAswOiOdSr2eN2PRo/ZnIlVmee5HxO7h2fQkxDSsz4QoaR6jjXdGo6w==",
+  "success": true,
+  "projectFilePath": "D:\\CPRJ\\CSharpLes\\TypingTest\\TypingTest\\TypingTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vlad\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.11\\microsoft.netcore.app.host.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}

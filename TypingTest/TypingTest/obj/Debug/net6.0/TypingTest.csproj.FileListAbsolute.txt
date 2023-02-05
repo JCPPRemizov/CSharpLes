@@ -1,0 +1,17 @@
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\bin\Debug\net6.0\TypingTest.exe
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\bin\Debug\net6.0\TypingTest.deps.json
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\bin\Debug\net6.0\TypingTest.runtimeconfig.json
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\bin\Debug\net6.0\TypingTest.dll
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\bin\Debug\net6.0\TypingTest.pdb
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.csproj.AssemblyReference.cache
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.AssemblyInfoInputs.cache
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.AssemblyInfo.cs
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.csproj.CoreCompileInputs.cache
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.dll
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\refint\TypingTest.dll
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.pdb
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.genruntimeconfig.cache
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\ref\TypingTest.dll
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\CPRJ\CSharpLes\TypingTest\TypingTest\obj\Debug\net6.0\TypingTest.csproj.CopyComplete

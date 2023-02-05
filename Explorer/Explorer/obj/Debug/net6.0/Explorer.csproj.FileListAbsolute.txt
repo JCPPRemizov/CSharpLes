@@ -1,0 +1,15 @@
+D:\CPRJ\CSharpLes\Explorer\Explorer\bin\Debug\net6.0\Explorer.exe
+D:\CPRJ\CSharpLes\Explorer\Explorer\bin\Debug\net6.0\Explorer.deps.json
+D:\CPRJ\CSharpLes\Explorer\Explorer\bin\Debug\net6.0\Explorer.runtimeconfig.json
+D:\CPRJ\CSharpLes\Explorer\Explorer\bin\Debug\net6.0\Explorer.dll
+D:\CPRJ\CSharpLes\Explorer\Explorer\bin\Debug\net6.0\Explorer.pdb
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\Explorer.csproj.AssemblyReference.cache
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\Explorer.GeneratedMSBuildEditorConfig.editorconfig
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\Explorer.AssemblyInfoInputs.cache
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\Explorer.AssemblyInfo.cs
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\Explorer.csproj.CoreCompileInputs.cache
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\Explorer.dll
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\refint\Explorer.dll
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\Explorer.pdb
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\Explorer.genruntimeconfig.cache
+D:\CPRJ\CSharpLes\Explorer\Explorer\obj\Debug\net6.0\ref\Explorer.dll

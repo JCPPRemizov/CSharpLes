@@ -1,0 +1,15 @@
+D:\CPRJ\CSharpLes\Dir\Dir\bin\Debug\net6.0\Dir.exe
+D:\CPRJ\CSharpLes\Dir\Dir\bin\Debug\net6.0\Dir.deps.json
+D:\CPRJ\CSharpLes\Dir\Dir\bin\Debug\net6.0\Dir.runtimeconfig.json
+D:\CPRJ\CSharpLes\Dir\Dir\bin\Debug\net6.0\Dir.dll
+D:\CPRJ\CSharpLes\Dir\Dir\bin\Debug\net6.0\Dir.pdb
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\Dir.csproj.AssemblyReference.cache
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\Dir.GeneratedMSBuildEditorConfig.editorconfig
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\Dir.AssemblyInfoInputs.cache
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\Dir.AssemblyInfo.cs
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\Dir.csproj.CoreCompileInputs.cache
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\Dir.dll
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\refint\Dir.dll
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\Dir.pdb
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\Dir.genruntimeconfig.cache
+D:\CPRJ\CSharpLes\Dir\Dir\obj\Debug\net6.0\ref\Dir.dll

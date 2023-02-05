@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/wcvnqTcuOz/tY/kWQoAR8MNLJ6RZvHi7kSEHVom1Nf0lElY5oHfCmQe/FLY+8ukfrILTjS+0CAKFoM6L5pW7w==",
+  "success": true,
+  "projectFilePath": "D:\\CPRJ\\Editor\\Editor\\Editor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vlad\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

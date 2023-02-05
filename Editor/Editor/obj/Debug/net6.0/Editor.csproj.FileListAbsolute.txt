@@ -1,0 +1,17 @@
+D:\CPRJ\Editor\Editor\bin\Debug\net6.0\Editor.exe
+D:\CPRJ\Editor\Editor\bin\Debug\net6.0\Editor.deps.json
+D:\CPRJ\Editor\Editor\bin\Debug\net6.0\Editor.runtimeconfig.json
+D:\CPRJ\Editor\Editor\bin\Debug\net6.0\Editor.dll
+D:\CPRJ\Editor\Editor\bin\Debug\net6.0\Editor.pdb
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.csproj.AssemblyReference.cache
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.GeneratedMSBuildEditorConfig.editorconfig
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.AssemblyInfoInputs.cache
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.AssemblyInfo.cs
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.csproj.CoreCompileInputs.cache
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.dll
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\refint\Editor.dll
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.pdb
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.genruntimeconfig.cache
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\ref\Editor.dll
+D:\CPRJ\Editor\Editor\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\CPRJ\Editor\Editor\obj\Debug\net6.0\Editor.csproj.CopyComplete

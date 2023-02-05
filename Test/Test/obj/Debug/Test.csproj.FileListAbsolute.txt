@@ -1,0 +1,16 @@
+D:\CPRJ\CSharpLes\Test\Test\bin\Debug\Test.exe.config
+D:\CPRJ\CSharpLes\Test\Test\bin\Debug\Test.exe
+D:\CPRJ\CSharpLes\Test\Test\bin\Debug\Test.pdb
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test.csproj.SuggestedBindingRedirects.cache
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\MainWindow.g.cs
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\App.g.cs
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test_MarkupCompile.cache
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test_MarkupCompile.lref
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\MainWindow.baml
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test.g.resources
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test.Properties.Resources.resources
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test.exe
+D:\CPRJ\CSharpLes\Test\Test\obj\Debug\Test.pdb
