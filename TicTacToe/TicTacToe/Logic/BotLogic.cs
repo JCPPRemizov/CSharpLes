@@ -14,7 +14,7 @@ namespace TicTacToe
         private WinLogic winLogic = new WinLogic();
         public void BotMove(char[,] board, char botSymbol, char playerSymbol)
         {
-            //Проверка, что бод в следующем ходе может выиграть
+            //Проверка, что бот в следующем ходе может выиграть
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
