@@ -13,6 +13,7 @@ namespace TicTacToe
         private char playerSymbol = 'X';
         private char botSymbol = 'O';
         private bool turn = false;
+        private bool isPlayerTurn = true;
         private int moveCount = 0;
         public MainWindow()
         {
@@ -34,6 +35,8 @@ namespace TicTacToe
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (isPlayerTurn)
+            {
                 Button button = (Button)sender;
                 int row = Grid.GetRow(button);
                 int col = Grid.GetColumn(button);
@@ -41,14 +44,22 @@ namespace TicTacToe
                 board[row, col] = playerSymbol;
                 button.IsEnabled = false;
                 moveCount++;
+                isPlayerTurn= false;
+
                 if (winLogic.IsWinner(board, playerSymbol))
                 {
                     label1.Content = $"Победили: {playerSymbol} - ки";
                     DisableAllButtons();
                 }
-                else if (winLogic.isDraw(moveCount) == false)
+                else if (winLogic.isDraw(moveCount) == true)
+                {
+                    label1.Content = "Ничья";
+                    DisableAllButtons();
+                }
+                else if (!isPlayerTurn)
                 {
                     bot.BotMove(board, botSymbol, playerSymbol);
+                    isPlayerTurn = true;
                     moveCount++;
                     if (winLogic.IsWinner(board, botSymbol))
                     {
@@ -56,11 +67,7 @@ namespace TicTacToe
                         DisableAllButtons();
                     }
                 }
-                else if (winLogic.isDraw(moveCount) == true)
-                {
-                    label1.Content = "Ничья";
-                    DisableAllButtons();
-                }
+            }
          
         }
         private void StartButton_Click(object sender, RoutedEventArgs e)
@@ -70,12 +77,14 @@ namespace TicTacToe
             if (turn == true)
             {
                 turn = false;
+                isPlayerTurn = false;
                 playerSymbol = 'O';
                 botSymbol = 'X';
             }
             else if (turn == false)
             {
                 turn = true;
+                isPlayerTurn = true;
                 playerSymbol = 'X';
                 botSymbol = 'O';
             }
@@ -100,6 +109,17 @@ namespace TicTacToe
             Button2_0.Content = "";
             Button2_1.Content = "";
             Button2_2.Content = "";
+            if (!isPlayerTurn)
+            {
+                bot.BotMove(board, botSymbol, playerSymbol);
+                isPlayerTurn = true;
+                moveCount++;
+                if (winLogic.IsWinner(board, botSymbol))
+                {
+                    label1.Content = $"Победили: {botSymbol} - ки";
+                    DisableAllButtons();
+                }
+            }
         }
     }
 }
