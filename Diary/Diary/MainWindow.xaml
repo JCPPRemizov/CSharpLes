@@ -16,7 +16,7 @@
             <RowDefinition Height="79*"/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <DatePicker x:Name="DatePicker" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="10,0,10,0"/>
+        <DatePicker x:Name="DatePicker" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="10,0,10,0" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
         <ListBox x:Name="NotesListBox" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,10,0,10" Grid.RowSpan="2" Grid.Row="1" SelectionChanged="NotesListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>

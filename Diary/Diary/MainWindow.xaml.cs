@@ -63,13 +63,10 @@ namespace Diary
             else {
                 Note newNote = new Note() { Date = DatePicker.SelectedDate.Value, Description = DescriptionTextBox.Text, Title = NameTextBox.Text };
                 NotesManager.notes.Add(newNote);
-                // Обновляем список заметок в ListBox'е
                 NotesManager.UpdateNotesListBox((DateTime)DatePicker.SelectedDate);
 
-                // Выбираем только что созданную заметку
                 NotesListBox.SelectedItem = newNote.Title;
 
-                // Фокусируемся на TextBox'е с названием заметки для редактирования
                 NameTextBox.Focus();
 
                 NotesManager.SaveNotes();
