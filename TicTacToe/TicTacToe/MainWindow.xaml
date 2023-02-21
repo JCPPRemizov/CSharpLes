@@ -28,6 +28,6 @@
         <Button x:Name="Button2_1" Content="" Grid.Column="1" Grid.Row="2" Click="Button_Click" FontSize="24"/>
         <Button x:Name="Button2_2" Content="" Grid.Column="2" Grid.Row="2" Click="Button_Click" FontSize="24"/>
         <Button x:Name="StartButton" Content="Начать игру" Grid.Row="3" Click="StartButton_Click" Grid.ColumnSpan="2" Margin="10,17,0,16" FontSize="24"/>
-        <Label x:Name="label1" Grid.Column="2" Content="Крестики - нолики"  Grid.Row="3" Height="42" Width="176" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label x:Name="label1" Grid.Column="2" Content="Крестики - нолики"  Grid.Row="3" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="42" VerticalAlignment="Center" HorizontalAlignment="Left" Width="176" Margin="1,0,0,0" />
     </Grid>
 </Window>
