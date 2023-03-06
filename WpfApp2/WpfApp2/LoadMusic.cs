@@ -19,7 +19,7 @@ namespace Pleer
         {
             var dialog = new CommonOpenFileDialog();
             dialog.IsFolderPicker = true;
-            dialog.Title = "SelectGovono";
+            dialog.Title = "Select Music";
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 musicFiles = Directory.GetFiles(dialog.FileName, "*.mp3").ToList();
