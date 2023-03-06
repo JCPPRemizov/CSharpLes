@@ -217,11 +217,13 @@ namespace Pleer
             {
                 media.Pause();
                 isPlay = false;
+                playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Pause;
             }
             else
             {
                 media.Play();
                 isPlay = true;
+                playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Play;
             }
         }
 

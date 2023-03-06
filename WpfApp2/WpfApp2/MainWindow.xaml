@@ -32,7 +32,7 @@
             <Icon:PackIconMaterial Kind="ChevronDoubleLeft" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
         </Button>
         <Button x:Name="playButton" Grid.Row="4" Grid.Column="1" Click="playButton_Click">
-            <Icon:PackIconMaterial Kind="Play" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
+            <Icon:PackIconMaterial x:Name="playIcon" Kind="Play" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
         </Button>
         <Button x:Name="forwardButton" Grid.Column="2" Grid.Row="4" Click="forwardButton_Click">
             <Icon:PackIconMaterial Kind="ChevronDoubleRight" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
