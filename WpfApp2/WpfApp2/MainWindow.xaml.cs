@@ -5,6 +5,7 @@ using System;
 using System.Windows.Media;
 using System.Threading.Tasks;
 using System.Text;
+using System.Linq;
 
 namespace Pleer
 {
@@ -13,8 +14,9 @@ namespace Pleer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool isOpen = false;
-        private bool isPlay, repeat = false;
+        private static bool isOpen = false;
+        private static bool isPlay, repeat, mixed = false;
+        private static Random rng = new Random();
         public MainWindow()
         {
             InitializeComponent();
@@ -25,7 +27,18 @@ namespace Pleer
             
         }
 
-        private void openButton_Click(object sender, RoutedEventArgs e)
+        #region WindowLogic
+        
+        private void Window_Closed(object sender, System.EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        #endregion
+
+
+        #region ButtonLogic
+        private void openFolderButton_Click(object sender, RoutedEventArgs e)
         {
             LoadMusic.Load();
             musicListBox.ItemsSource = LoadMusic.getMusicFilesName;
@@ -37,27 +50,83 @@ namespace Pleer
             }
         }
 
-        private void Window_Closed(object sender, System.EventArgs e)
+        private void forwardButton_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            if (musicListBox.SelectedIndex < musicListBox.Items.Count)
+            {
+                musicListBox.SelectedIndex++;
+            }
         }
 
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (musicListBox.SelectedIndex >= 1){
+                musicListBox.SelectedIndex--;
+            }
+        }
+
+        private void playButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isPlay)
+            {
+                media.Pause();
+                isPlay = false;
+                playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Play;
+            }
+            else
+            {
+                media.Play();
+                isPlay = true;
+                playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Pause;
+            }
+        }
+
+        private void repeatButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isOpen == true)
+            {
+                if (repeat == false)
+                {
+                    repeatButton.Background = Brushes.Gray;
+                    repeat = true;
+                }
+                else 
+                {
+                    repeatButton.Background = Brushes.Transparent;
+                    repeat = false; 
+                }
+            }
+        }
+
+        private void randButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isOpen)
+            {
+                if (mixed == false)
+                {
+
+                    musicListBox.ItemsSource = LoadMusic.getMusicFilesName.OrderBy(a => rng.Next());
+                    randButton.Background = Brushes.Gray;
+                    mixed = true;
+                }
+                else
+                {
+                    randButton.Background = Brushes.Transparent;
+                    musicListBox.ItemsSource = LoadMusic.getMusicFilesName;
+                    mixed = false;
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region SliderLogic
         private void volumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             media.Volume = volumeSlider.Value;
         }
-
-        private void media_MediaOpened(object sender, RoutedEventArgs e)
-        {
-                if (media.NaturalDuration.HasTimeSpan)
-                {
-                    mediaSlider.Maximum = media.NaturalDuration.TimeSpan.Ticks;
-                    mediaSlider.Value = 0;
-                    if (isOpen == false)
-                        sliderUpdate();
-                    isOpen = true;
-                }
-        }
+        
         private void UpdateSliderPosition(long position)
         {
             
@@ -69,26 +138,41 @@ namespace Pleer
                 }
             });
         }
-        private void sliderUpdate()
+        
+        private void SliderUpdateStream()
         {
             Task.Run(() =>
             {
                 while (true)
                 {
-                    if (getTime() != null && getRemTime() != null)
+                    if (GetCurrentTime() != null && GetRemainingTime() != null)
                     {
-                        UpdateSliderPosition(getCurPos());
-                        setTime(getTime());
-                        setRemTime(getRemTime());
-                        if (getTime() == getTotalTime())
+                        UpdateSliderPosition(GetCurrentSliderPos());
+                        SetCurrentTime(GetCurrentTime());
+                        SetRemainingTime(GetRemainingTime());
+                        if (GetCurrentTime() == GetTotalTime())
                         {
-                            changeMusic();
+                            ChangeMusic();
                         }
                     }
                 }
             });
         }
-        private long getCurPos()
+        
+        private void mediaSlider_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
+        {
+            media.Pause();
+            isPlay = false;
+        }
+
+        private void mediaSlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            media.Position = new TimeSpan(Convert.ToInt64(mediaSlider.Value));
+            media.Play();
+            isPlay = true;
+        }
+        
+        private long GetCurrentSliderPos()
         {
             return media.Dispatcher.Invoke(() =>
 
@@ -104,7 +188,7 @@ namespace Pleer
             });
         }
 
-        private string getTime()
+        private string GetCurrentTime()
         {
             return media.Dispatcher.Invoke(() =>
 
@@ -120,7 +204,7 @@ namespace Pleer
             });
         }
 
-        private string getTotalTime()
+        private string GetTotalTime()
         {
             return media.Dispatcher.Invoke(() =>
 
@@ -135,7 +219,8 @@ namespace Pleer
                 }
             });
         }
-        private string getRemTime()
+
+        private string GetRemainingTime()
         {
             return media.Dispatcher.Invoke(() =>
 
@@ -151,31 +236,7 @@ namespace Pleer
             });
         }
 
-        private void setRemTime(string time)
-        {
-            media.Dispatcher.Invoke(() =>
-
-            {
-                if (media.NaturalDuration.HasTimeSpan)
-                {
-                    remTextBox.Text = time;
-                }
-            });
-        }
-
-        private void setTime(string CurTime)
-        {
-            media.Dispatcher.Invoke(() =>
-
-            {
-                if (media.NaturalDuration.HasTimeSpan)
-                {
-                    curSecBox.Text = CurTime;
-                }
-            });
-        }
-
-        private void changeMusic()
+        private void ChangeMusic()
         {
             media.Dispatcher.Invoke(() =>
             {
@@ -199,78 +260,65 @@ namespace Pleer
             });
         }
 
+        private void SetRemainingTime(string time)
+        {
+            media.Dispatcher.Invoke(() =>
+
+            {
+                if (media.NaturalDuration.HasTimeSpan)
+                {
+                    remainingTextBox.Text = time;
+                }
+            });
+        }
+
+        private void SetCurrentTime(string CurTime)
+        {
+            media.Dispatcher.Invoke(() =>
+
+            {
+                if (media.NaturalDuration.HasTimeSpan)
+                {
+                    currentTimeBox.Text = CurTime;
+                }
+            });
+        }
+
+        #endregion
+
+
+        #region MediaLogic
+        
+        private void media_MediaOpened(object sender, RoutedEventArgs e)
+        {
+                if (media.NaturalDuration.HasTimeSpan)
+                {
+                    mediaSlider.Maximum = media.NaturalDuration.TimeSpan.Ticks;
+                    mediaSlider.Value = 0;
+                    if (isOpen == false)
+                        SliderUpdateStream();
+                    isOpen = true;
+                }
+        }
+
+        #endregion
+
+
+        #region MusicListBoxLogic
+        
         private void musicListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            media.Source = new Uri(LoadMusic.getMusicFiles[musicListBox.SelectedIndex]);
-        }
-
-        private void backButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (musicListBox.SelectedIndex >= 1){
-                musicListBox.SelectedIndex--;
-            }
-        }
-
-        private void playButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (isPlay)
-            {
-                media.Pause();
-                isPlay = false;
-                playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Pause;
-            }
+            if (musicListBox.SelectedIndex != -1)
+                media.Source = new Uri(LoadMusic.getMusicFiles.Find(p => p.Contains(musicListBox.SelectedItem.ToString())));
             else
             {
-                media.Play();
-                isPlay = true;
-                playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Play;
+                media.Stop();
             }
         }
 
-        private void repeatButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (isOpen == true)
-            {
-                if (repeat == false)
-                {
-                    repeatButton.Background = Brushes.Gray;
-                    repeat = true;
-                }
-                else 
-                {
-                    repeatButton.Background = Brushes.Transparent;
-                    repeat = false; 
-                }
-            }
-        }
+        #endregion
 
-        private void mediaSlider_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
-        {
-            media.Pause();
-            isPlay = false;
-        }
 
-        private void mediaSlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
-        {
-            media.Position = new TimeSpan(Convert.ToInt64(mediaSlider.Value));
-            media.Play();
-            isPlay = true;
-        }
-
-        private void randButton_Click(object sender, RoutedEventArgs e) {
-            if (isOpen == true)
-            {
-                Random random = new Random();
-                musicListBox.SelectedIndex = random.Next(0, musicListBox.Items.Count-1);
-            }
-        }
-
-        private void forwardButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (musicListBox.SelectedIndex < musicListBox.Items.Count)
-            {
-                musicListBox.SelectedIndex++;
-            }
-        }
+        
     }
 }

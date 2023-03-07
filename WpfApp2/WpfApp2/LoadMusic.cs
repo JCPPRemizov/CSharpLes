@@ -24,6 +24,9 @@ namespace Pleer
             {
                 musicFiles = Directory.GetFiles(dialog.FileName, "*.mp3").ToList();
                 musicFilesName = musicFiles.Select(p => Path.GetFileName(p)).ToList();
+                musicFiles.Sort();
+                
+                musicFilesName.Sort();
             }
         }
   

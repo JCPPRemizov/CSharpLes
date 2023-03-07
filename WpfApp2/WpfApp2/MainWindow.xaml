@@ -24,7 +24,7 @@
             <RowDefinition Height="23*"/>
             <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="openButton" Content="Открыть папку" Grid.ColumnSpan="6" Style="{x:Null}" Click="openButton_Click" Margin="10,0,8,0"/>
+        <Button x:Name="openFolderButton" Content="Открыть папку" Grid.ColumnSpan="6" Style="{x:Null}" Click="openFolderButton_Click" Margin="10,0,8,0"/>
         <ListBox x:Name="musicListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="6" Margin="10,10,8,10" Grid.Row="1" SelectionChanged="musicListBox_SelectionChanged"/>
         <Slider x:Name="mediaSlider" Grid.Row="2" Grid.ColumnSpan="6" Margin="10,10,8,0" Thumb.DragStarted ="mediaSlider_DragStarted" Thumb.DragCompleted="mediaSlider_DragCompleted"/>
         <Slider x:Name="volumeSlider" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" ValueChanged="volumeSlider_ValueChanged"/>
@@ -32,7 +32,7 @@
             <Icon:PackIconMaterial Kind="ChevronDoubleLeft" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
         </Button>
         <Button x:Name="playButton" Grid.Row="4" Grid.Column="1" Click="playButton_Click">
-            <Icon:PackIconMaterial x:Name="playIcon" Kind="Play" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
+            <Icon:PackIconMaterial x:Name="playIcon" Kind="Pause" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
         </Button>
         <Button x:Name="forwardButton" Grid.Column="2" Grid.Row="4" Click="forwardButton_Click">
             <Icon:PackIconMaterial Kind="ChevronDoubleRight" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
@@ -43,8 +43,8 @@
         <Button x:Name="randButton" Grid.Column="4" Grid.Row="4" Click="randButton_Click">
             <Icon:PackIconMaterial Kind="ArrowDecisionOutline" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="40"/>
         </Button>
-        <TextBlock x:Name="curSecBox" Grid.Row="2" TextWrapping="Wrap" Text="00:00:00" Margin="10,39,0,0" Grid.RowSpan="2"/>
-        <TextBlock x:Name="remTextBox" Grid.Column="5" Grid.Row="2" TextWrapping="Wrap" Text="00:00:00" TextAlignment="Right" Margin="0,39,10,0" Grid.RowSpan="2"/>
+        <TextBlock x:Name="currentTimeBox" Grid.Row="2" TextWrapping="Wrap" Text="00:00:00" Margin="10,39,0,0" Grid.RowSpan="2"/>
+        <TextBlock x:Name="remainingTextBox" Grid.Column="5" Grid.Row="2" TextWrapping="Wrap" Text="00:00:00" TextAlignment="Right" Margin="0,39,10,0" Grid.RowSpan="2"/>
         <MediaElement x:Name="media" MediaOpened="media_MediaOpened"></MediaElement>
     </Grid>
 </Window>
