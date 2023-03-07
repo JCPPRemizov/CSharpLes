@@ -15,7 +15,7 @@ namespace Pleer
     public partial class MainWindow : Window
     {
         private static bool isOpen = false;
-        private static bool isPlay, repeat, mixed = false;
+        private static bool isPlay, repeat, mixed, touched = false;
         private static Random rng = new Random();
         public MainWindow()
         {
@@ -160,7 +160,7 @@ namespace Pleer
             {
                 while (true)
                 {
-                    if (GetCurrentTime() != null && GetRemainingTime() != null)
+                    if (GetCurrentTime() != null && GetRemainingTime() != null && touched == false)
                     {
                         UpdateSliderPosition(GetCurrentSliderPos());
                         SetCurrentTime(GetCurrentTime());
@@ -176,15 +176,13 @@ namespace Pleer
         
         private void mediaSlider_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
         {
-            media.Pause();
-            isPlay = false;
+            touched = true;
         }
 
         private void mediaSlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {
+            touched = false;
             media.Position = new TimeSpan(Convert.ToInt64(mediaSlider.Value));
-            media.Play();
-            isPlay = true;
         }
         
         private long GetCurrentSliderPos()
