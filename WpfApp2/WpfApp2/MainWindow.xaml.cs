@@ -45,6 +45,7 @@ namespace Pleer
             if (musicListBox.Items.Count != 0)
             {
                 isPlay= true;
+                playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Pause;
                 musicListBox.SelectedIndex = 0;
                 media.Play();
             }
@@ -55,14 +56,28 @@ namespace Pleer
             if (musicListBox.SelectedIndex < musicListBox.Items.Count)
             {
                 musicListBox.SelectedIndex++;
+                if (isPlay == false)
+                {
+                    media.Play();
+                    isPlay = true;
+                    playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Pause;
+                }
             }
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             if (musicListBox.SelectedIndex >= 1){
+                
                 musicListBox.SelectedIndex--;
+                if (isPlay == false)
+                {
+                    media.Play();
+                    isPlay = true;
+                    playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Pause;
+                }
             }
+            
         }
 
         private void playButton_Click(object sender, RoutedEventArgs e)
@@ -313,6 +328,14 @@ namespace Pleer
             else
             {
                 media.Stop();
+                media.Source = null;
+                currentTimeBox.Text  = remainingTextBox.Text = "00:00:00";
+                if (isPlay == true)
+                {
+                    playIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.Play;
+                    isPlay = false;
+                }
+                mediaSlider.Value = 0;
             }
         }
 
