@@ -1,0 +1,19 @@
+﻿<Window x:Class="Accounting.Pages.NewNotesTypeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Accounting.Pages"
+        mc:Ignorable="d"
+        Title="NewNotesTypeWindow" Height="300" Width="300" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="120*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="NameTextBox" TextWrapping="Wrap" Margin="31,21,43,42" ToolTip="Имя заметки" Grid.Row="1" />
+        <Button x:Name="AddTypeButton" Content="Добавить новый тип" Margin="31,26,43,48" Click="AddTypeButton_Click" Grid.Row="2"/>
+
+    </Grid>
+</Window>
